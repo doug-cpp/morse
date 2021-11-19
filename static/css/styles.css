@@ -1,0 +1,156 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url('../assets/svg/radiant-gradient.svg');
+	background-size: cover;
+	margin: 0;
+}
+
+button#morse-help-button {
+    border: 0;
+	border-radius: 4px;
+	position: absolute;
+	left: 8px;
+	top: 8px;
+	background: darkgrey;
+	font: bold 24px sans-serif;
+	color: #333;
+	text-shadow: 0 0 8px white;
+	cursor: pointer;
+	width: 32px;
+	height: 32px;
+}
+
+div#morse-container {
+	display: flex;
+	flex-direction: column;
+	/* justify-content: center; */
+	height: 100vh;
+}
+
+div#morse-container div {
+    display: flex;
+    height: 60vh;
+    justify-content: space-evenly;
+    margin-top: 8px;
+    width: 100vw;
+}
+
+div#morse-container div section#morse-user-help {
+	width: 40vw;
+	height: 100%;
+	background: gainsboro;
+	padding: 1vw;
+	cursor: pointer;
+	display: none;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 2px 2px 2px #0008;
+	overflow: visible;
+	z-index: 2;
+}
+
+div#morse-container div section#morse-user-help > span {
+    color: dimgray;
+    font: bold calc(12px + .5vw) sans-serif;
+    margin: 0 0 16px;
+}
+div#morse-container div section#morse-user-help > img {
+    max-width: 100%;
+    height: auto;
+    max-height: 90%;
+    opacity: .5;
+}
+
+button#morse-help-button:hover {
+	filter: brightness(1.1);
+}
+
+div#morse-container div section#morse-monitor {
+	width: 58vw;
+	height: 100%;
+	background: #181818;
+	padding: 1vw;
+	color: seagreen;
+	font: bold calc(12px + .5vw) monospace;
+	border: 2vw solid black;
+	box-shadow: 0 32px 24px -16px #000b;
+	border-radius: 1vw;
+	z-index: 1;
+	overflow-y: hidden;
+}
+
+div#morse-container section.morse-wire {
+	width: 100%;
+	height: 30vh;
+	display: flex;
+	justify-content: center;
+}
+
+div#morse-container section.morse-input {
+	width: 100%;
+	background: #181818;
+	border-bottom: 1vw solid black;
+	padding: 2vw;
+	/* box-shadow: 0 -1vw 5vw dimgray; */
+}
+
+div#morse-container section.morse-input input#morse-user-input {
+	width: 100%;
+	font: bold calc(12px + .5vw) monospace;
+}
+
+input:invalid {
+  box-shadow: 0 0 5px 1px red;
+}
+
+input:focus:invalid {
+  box-shadow: none;
+}
+
+div#morse-container section.morse-input span#morse-user-input-message {
+    color: seagreen;
+    margin: 8px 0 0;
+    display: block;
+    font: normal calc(8px + .4vw) monospace;
+}
+
+svg.wire {
+	stroke-width: calc(2px + .2vw);
+	overflow: visible;
+	height: 30vh;
+}
+
+.flex-center {
+	align-items: center;
+}
+.flex-right {
+	align-items: flex-end;
+}
+
+@media screen and (max-width: 768px)
+{
+	div#morse-container div section#morse-user-help {
+		width: 100vw;
+		margin-bottom: 8px;
+	}
+	div#morse-container div section#morse-monitor {
+		width: 100vw;
+	}
+	div#morse-container div {
+		width: 100vw;
+		height: 80vh;
+		margin-top: 46px;
+		flex-direction:column;
+	}
+	svg.wire {
+	    height: 10vh;
+    }
+
+	div#morse-container section.morse-wire {
+		height: 8vh;
+	}
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Morse</title>
+  <meta name="description" content="A simple Morse to Text webapp">
+  <meta name="author" content="SitePoint">
+
+  <meta property="og:title" content="A simple Morse to Text webapp">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="A simple Morse to Text webapp">
+
+  <link rel="icon" href="{{ url_for('static', filename='assets/icons/favicon.ico') }}">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='assets/icons/apple-touch-icon.png') }}">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+  <script type="module" src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/socket.io.js') }}"></script>
+
+
+</head>
+
+<body>
+  <button id="morse-help-button">?</button>
+  <div id="morse-container" class="flex-center">
+    <div>
+      <section id="morse-user-help">
+        <span>Tabela internacional</span>
+        <img src="{{ url_for('static', filename='assets/svg/morse-code-table.svg') }}" width="426" height="397" alt="morse table" />
+      </section>
+      <section id="morse-monitor"></section>
+    </div>
+    <section class="morse-wire">
+      <svg class="wire" version="1.1" viewBox="0 4 52 72" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="m36 0.419c7.11 5.47 14.2 10.9 15.9 16.1 1.73 5.2-1.93 10.1-8.59 12.6-6.66 2.51-16.3 2.6-23.8 3.48s-12.6 2.58-15.9 5.67c-3.31 3.09-4.73 7.58-0.817 12.7 3.91 5.13 13.2 10.9 16.5 15.7 3.37 4.78 0.855 8.57-1.66 12.4" fill="none" stroke="black"/></svg>
+    </section>
+    <section class="morse-input">
+      <input id="morse-user-input" validate placeholder="Ex.: ... --- ..."
+             oninput="this.value = this.value.replace(/[^.-\s]/g, '')"
+             pattern="^[.-]{1,5}(?:[ \t]+[.-]{1,5})*(?:[ \t]+[.-]{1,5}(?:[ \t]+[.-]{1,5})*)*[ \t]*$"
+      />
+      <span id="morse-user-input-message">Digite o código morse</span>
+    </section>
+  </div>
+</body>
+</html>
