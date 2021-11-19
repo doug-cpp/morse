@@ -124,6 +124,30 @@ svg.wire {
 	height: 30vh;
 }
 
+div.error-page-container {
+    display: flex;
+    justify-content: center:
+    align-items: center;
+    width: 100%;
+    heigh: 100%;
+}
+
+section.error-page-info {
+    display: flex;
+    justify-content: center:
+    align-items: center;
+    width: 400px;
+    height: 250px;
+    background: #0008;
+    color: white;
+    font: bold 24px monospace;
+    border: 1px solid;
+}
+
+section.error-page-info h1 {
+    font-size: 72px;
+}
+
 .flex-center {
 	align-items: center;
 }

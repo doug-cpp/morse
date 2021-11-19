@@ -38,5 +38,5 @@ MORSE_DICT = {
 }
 
 SOCKET_CONNECTED = 'socket_connected'
-ERROR_MESSAGE = "Erro ao tentar interpratar a mensagem"
+ERROR_MESSAGE = "Erro ao tentar interpretar a mensagem"
 WELLCOME_MESSAGE = 'Bem-vindo ao decifrador morse!'

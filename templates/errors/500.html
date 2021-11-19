@@ -1,1 +1,33 @@
-Erro 500!
+<!doctype html>
+
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Morse</title>
+  <meta name="description" content="A simple Morse to Text webapp">
+  <meta name="author" content="Douglas">
+
+  <meta property="og:title" content="A simple Morse to Text webapp">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content="A simple Morse to Text webapp">
+
+  <link rel="icon" href="{{ url_for('static', filename='assets/icons/favicon.ico') }}">
+  <link rel="apple-touch-icon" href="{{ url_for('static', filename='assets/icons/apple-touch-icon.png') }}">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+
+</head>
+
+<body>
+    <div class="error-page-container">
+      <section class="error-page-info">
+        <h1>S.O.S</h1>
+        <h1>... --- ...</h1>
+        <h2>500</h2>
+        <h3>Erro interno do servidor</h3>
+      </section>
+    </div>
+</body>
+</html>
