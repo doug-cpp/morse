@@ -22,11 +22,36 @@ Como esta aplicação foi desenvolvida em dois dias e tem o objetivo unidirecion
 
 Os testes unitários foram implementados para garantir o correto funcionamento da única inteligência da aplicação: o método tradudor.
 
-Para servir as páginas especificadas por [WSGI](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface) e cuidar do ..., foi usado o [Green Unicorn - gunicorn](https://gunicorn.org/), que...
+Para servir as páginas especificadas por [WSGI](https://en.wikipedia.org/wiki/Web_Server_Gateway_Interface) e cuidar da comunicação entre as camadas, foi usado o [Green Unicorn - gunicorn](https://gunicorn.org/), que é um senso comum para aplicações python/web.
+
+Para empacotar código e dependências, foi utilizado uma solução de [container Docker](https://www.docker.com/), que facilita a portabilidade de execução entre as plataformas.
 
 ### Infraestrutura
 
+#### 1. Simples localmente
 
+Da maneira em que a aplicação foi desenvolvida e empacotada, a mesma pode ser executada em um servidor local com uma configuração básica e um sistema operacional com o Docker instalado.
+
+#### 2. Computação em nuvem
+
+Para a implantação em nuvem, foi utilizado uma conta gratuita [Heroku](https://id.heroku.com), onde foi criada uma aplicação simples e implantado o container.
+
+Por ser uma aplicação simples, ao usar a forma gratuita do Heroku, que funciona bem, porém de forma similar ao comportamento de hibernação das funções lambda.
+
+## Obtendo o sistema
+
+### Pré-requisitos
+
+- Sistema operacional com compatível com o Docker;
+- Docker instalado e configurado;
+- Cliente git instalado e configurado.
+
+### Instalação
+
+- Acesse https://github.com/doug-cpp/morse e clone o repositório;
+- Em um terminal, execute `git clone git@github.com:doug-cpp/morse.git`
+
+(...)
 ## O mundo real
 
 No cenário atual, as aplicações precisam contar com grande disponibilidade e um cuidado especial deve ser investido para a escalabilidade. Nos dias de hoje, apesar de óbvio, é válido salientar que contar com uma estrutura própria é algo proibitivo. Não é viável dispor de equipamentos que exigem manutenção, profissionais dedicados, disponibilidade e hardware atualizado; por isto é necessário lançar mão de serviços de nuvem, que provêem escalonamento automático do ambiente de hospedagem. A integração perfeita com o Firebase proporciona uma plataforma de front-end para dispositivos móveis fácil de usar e um back-end confiável e escalonável
