@@ -48,11 +48,21 @@ Por ser uma aplicação simples, ao usar a forma gratuita do Heroku, que funcion
 
 ### Instalação
 
-- Acesse https://github.com/doug-cpp/morse e clone o repositório;
-- Em um terminal, execute `git clone git@github.com:doug-cpp/morse.git`
+Em um terminal, executa os comandos abaixo:
 
-(...)
-## O mundo real
+- `git clone git@github.com:doug-cpp/morse.git`
+- `docker build -t morse-doug .`
+
+### Execução
+
+Em uma janela de terminal, execute o comando:
+
+- `docker run -d --name morse-doug -p 8080:8080 morse-doug`
+- Abra um navegador e acesse o link `http://localhost:8080`
+
+---
+
+## Arquitetura ideal
 
 No cenário atual, as aplicações precisam contar com grande disponibilidade e um cuidado especial deve ser investido para a escalabilidade. Nos dias de hoje, apesar de óbvio, é válido salientar que contar com uma estrutura própria é algo proibitivo. Não é viável dispor de equipamentos que exigem manutenção, profissionais dedicados, disponibilidade e hardware atualizado; por isto é necessário lançar mão de serviços de nuvem, que provêem escalonamento automático do ambiente de hospedagem. A integração perfeita com o Firebase proporciona uma plataforma de front-end para dispositivos móveis fácil de usar e um back-end confiável e escalonável
 
