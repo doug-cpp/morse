@@ -12,4 +12,4 @@ Ao receber inputs do usuário, os dados são avaliados por expressão regular, d
 
 Ao receber os dados, o python separa o texto em blocos de código morse, que são avaliados de acordo com um dicionário em forma de constante. Caso o bloco represente uma letra ou um número, este é reservado e então retornado em forma de palavra ou frase para o usuário. Este retorno é tratado de modo simples, sendo exibido em uma representação gráfica de um display virtual.
 
-Nem todas as combinações de pontos e traços representam um código morse internacional. A combinação "----", por exemplo não está prevista na tabela padrão internacional e por isto é avaliada e tratada no backend com um ValueError informativo
+Nem todas as combinações de pontos e traços representam um código morse internacional. A combinação de quatro traços `----`, por exemplo não está prevista na [tabela padrão internacional](https://ethw.org/Morse_Code) e por isto é avaliada e tratada no *backend* com um [`ValueError`](https://docs.python.org/3/tutorial/errors.html) informativo
