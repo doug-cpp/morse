@@ -36,9 +36,17 @@ Da maneira em que a aplicação foi desenvolvida e empacotada, a mesma pode ser 
 
 Para a implantação em nuvem, foi utilizado uma conta gratuita [Heroku](https://id.heroku.com), onde foi criada uma aplicação simples e implantado o container.
 
-Por ser uma aplicação simples, ao usar a forma gratuita do Heroku, que funciona bem, porém de forma similar ao comportamento de hibernação das funções lambda.
+Por ser uma aplicação simples, ao usar a forma gratuita do Heroku, que funciona bem, porém de forma similar ao comportamento de hibernação das funções lambda.[^lambda]
+
+## Acessando o sistema
+
+A aplicação *web* pode ser acessada através do link: https://morse-douglas.herokuapp.com
+
+É relevante notar o comportamento similar às funções lambda, citado no tópico anterior.[^lambda]
 
 ## Obtendo o sistema
+
+Para testes e alterações locais, o sistema pode ser utilizado conforme instruções abaixo:
 
 ### Pré-requisitos
 
@@ -87,3 +95,5 @@ LGPD - privacidade do usuário
 Configuração de certificado SSL para prover conesão segura https para usuários (pré-requisito para ranqueamento). Poderemos até mesmo usar certificado grátis com a ferramenta let's encrypt.
 
 Implementação de testes automatizados teste unitário e um processo de ci/cd com as ferramentas do gitlab
+
+[^lambda]: A primeira invocação de uma função [Lambda](https://aws.amazon.com/pt/lambda/faqs/) pode ser artificialmente lenta. As invocações subsequentes não seguirão esta tendência. Este efeito é comum e até desejável, pois poupará recursos de uma máquina que está parada por inatividade. Se a mesma recebe requisições frequentes, ela responderá imediatamente, porém se está em estado de hibernação, apenas a primeira requisição servirá para que a máquina responda as próximas adequadamente.
