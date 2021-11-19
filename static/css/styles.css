@@ -126,26 +126,29 @@ svg.wire {
 
 div.error-page-container {
     display: flex;
-    justify-content: center:
+    justify-content: center;
     align-items: center;
-    width: 100%;
-    heigh: 100%;
+    width: 100vw;
+    height: 100vh;
 }
 
 section.error-page-info {
+    flex-direction: column;
     display: flex;
-    justify-content: center:
+    justify-content: center;
+    box-sizing:border-box;
     align-items: center;
     width: 400px;
     height: 250px;
-    background: #0008;
+    background: #0005;
     color: white;
-    font: bold 24px monospace;
-    border: 1px solid;
+    text-shadow:0 0 32px white;
+    font: bold 12px monospace;
 }
 
 section.error-page-info h1 {
-    font-size: 72px;
+    font-size: 32px;
+    margin: 8px;
 }
 
 .flex-center {
