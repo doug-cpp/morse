@@ -1,4 +1,4 @@
-from resources.constants import MORSE_DICT, ERROR_MESSAGE
+from resources.constants import MORSE_DICT, GENERAL_ERROR_MESSAGE, INVALID_CODE_ERROR_MESSAGE
 
 
 class Interpreter:
@@ -10,7 +10,7 @@ class Interpreter:
             morse_arr = morse_code.split(' ')
             for morse_item in morse_arr:
                 if morse_item not in MORSE_DICT:
-                    raise ValueError(morse_item + ' não é um código válido')
+                    raise ValueError(morse_item + INVALID_CODE_ERROR_MESSAGE)
 
                 interpreted = interpreted + MORSE_DICT[morse_item]
             return interpreted
@@ -19,4 +19,4 @@ class Interpreter:
             return str(e)
 
         except Exception:
-            return ERROR_MESSAGE
+            return GENERAL_ERROR_MESSAGE

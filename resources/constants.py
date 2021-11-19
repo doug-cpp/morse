@@ -38,5 +38,6 @@ MORSE_DICT = {
 }
 
 SOCKET_CONNECTED = 'socket_connected'
-ERROR_MESSAGE = "Erro ao tentar interpretar a mensagem"
+GENERAL_ERROR_MESSAGE = "Erro ao tentar interpretar a mensagem"
+INVALID_CODE_ERROR_MESSAGE = " inexistente na tabela de referência"
 WELLCOME_MESSAGE = 'Bem-vindo ao decifrador morse!'
