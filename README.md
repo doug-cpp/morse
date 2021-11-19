@@ -72,21 +72,26 @@ Em uma janela de terminal, execute o comando:
 
 ## Arquitetura ideal
 
-No cenário atual, as aplicações precisam contar com grande disponibilidade e um cuidado especial deve ser investido para a escalabilidade. Nos dias de hoje, apesar de óbvio, é válido salientar que contar com uma estrutura própria é algo proibitivo. Não é viável dispor de equipamentos que exigem manutenção, profissionais dedicados, disponibilidade e hardware atualizado; por isto é necessário lançar mão de serviços de nuvem, que provêem escalonamento automático do ambiente de hospedagem. A integração perfeita com o Firebase proporciona uma plataforma de front-end para dispositivos móveis fácil de usar e um back-end confiável e escalonável
+No cenário atual, as aplicações precisam contar com grande disponibilidade e um cuidado especial deve ser investido para a escalabilidade. Nos dias de hoje, apesar de óbvio, é válido salientar que contar com uma estrutura própria é algo proibitivo. Não é viável dispor de equipamentos que exigem manutenção, profissionais dedicados, disponibilidade e hardware atualizado; por isto é necessário lançar mão de serviços de nuvem, que provêem escalonamento automático do ambiente de hospedagem.
 
-Seja qual for o conjunto de ferramentas e serviços escolhidos, é importante ter em mente sempre a otimização; por exemplo, escolhendo data centers de regiões estratégicas, diminuindo a latência de rede, otimizando o tamanho das mensagens, para que os usuários com restrições sejam menos afetados (uma realidade ainda presente em diversas partes do globo). Portanto, caso a aplicação seja usada por usuários finais, é necessário uma preocupação extra com dispositivos móveis, em que a maior parte dos usuários precisa lidar com a limitação de dados e velocidade de transferência, além de levar em consideração a distribuição de acessos, para que os usuários não se conectem em um só ponto.
+Ferramentas como o [Google App Engine](https://cloud.google.com/appengine) permitem o a criação de aplicativos altamente escalonáveis em uma plataforma totalmente gerenciada e sem servidor. Existem diversas ferramentas similares que permitem o escalonamento de aplicativos em pequena ou grande escala sem precisar se preocupar com o gerenciamento da infraestrutura.
 
-brainstorm:
+Seja qual for o conjunto de ferramentas e serviços escolhidos, é importante ter em mente a otimização; por exemplo, escolhendo data centers de regiões estratégicas, diminuindo a latência de rede, otimizando o tamanho das mensagens, para que os usuários com restrições sejam menos afetados (uma realidade ainda presente em diversas partes do globo). Portanto, caso a aplicação seja usada por usuários finais, é necessário uma preocupação extra com dispositivos móveis, em que a maior parte dos usuários precisa lidar com a limitação de dados e velocidade de transferência, além de levar em consideração a distribuição de acessos, para que os usuários não se conectem em um só ponto.
 
-Se tivesse tempo, colocaria autenticação com mecanismos para evitar que um bot envie milhares de requisições pra evitar bot para usuários
-controlando as requisições por segundo de um mesmo usuário.
+Como processo de escalonamento, é essencial separar o monolito em conceitos de *frontend* e *backend*, para que o desenvolvimento de complexidade se torne independente e desacoplado, otimizando a manutenção do sistema.
+
+Em alguns casos, é interessante usar o serviço RabbitMQ como message broker, para que caso o *backend* esteja *offline*, as mensagens não sejam perdidas (e ainda retorne o temido erro 500). Com o uso de serviços de mensageria, o fluxo prossegue de modo transparente e assim que o *backend* estiver operacional, as mensagens serão consumidas.
+
+Outro ponto importante é a autenticação, forjada com mecanismos para evitar que [*bots*](https://pt.wikipedia.org/wiki/Bot) possam enviar milhares de requisições, controlando, por exemplo um número máximo de *inputs* por segundo de um mesmo usuário. O escalonamento do *backend* precisa de cuidado especial, pois enquanto o usuário requisita uma vez o *frontend* para usar a aplicação, o *backend* é requisitado várias, por exemplo, neste caso, a cada mensagem enviada.
+
+Redis
+
 Implementar o log detalhado para monitoramento de acessos e erros, separadamente, visando experiência de usuário,
 CWV, LGPD,
 
 Monitoramento via newrelic
-Separar o monolito em front/back, implementando o RabbitMQ e Redis como message broker, para que caso o back esteja offline, as mensagens não sejam perdidas e retornado erro 500 para o usuário, e assim que o back voltar, consumir as mensagens.
 
-o escalonamento do back como cuidado especial prioridade, por que o usuário requisita uma vez o front enquanto que o back é requisitado muitas vezes a cada mensagem que o front envia.
+
 
 log separado (aplicação) e um outro de usuários (quem entrou, quantas mensagens foram enviadas, dentre outras métricas para aprendizado contínuo de maquina)
 
