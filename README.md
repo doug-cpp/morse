@@ -105,4 +105,20 @@ Seja qual for o conjunto de ferramentas e serviços escolhidos, é importante te
 
 É necessário prover um sistema eficiente de cadastro de usuário, que seja fácil e eficaz, armazenado em um serviço de banco de dados em nuvem (*DBaaS*), como [`AWS RDS`](https://aws.amazon.com/pt/rds/?nc2=h_ql_prod_fs_rds), que dispõe de *backup* e atualização automáticos, nos isentando também destas responsabilidades.
 
+
+## Screenshots
+
+![wellcomeDesktop](./static/assets/screenshots/wellcomeDesktop.png "Tela de boas vindas")
+
+---
+![morseHelpDesktop](./static/assets/screenshots/morseHelpDesktop.png "Desktop com ajuda ativa")
+
+---
+![morseHelpMobile](./static/assets/screenshots/morseHelpMobile.png "Mobile com ajuda ativa")
+
+---
+![pageNotFound](./static/assets/screenshots/pageNotFound.png "Página não encontrada")
+
+---
+
 [^lambda]: A primeira invocação de uma função [Lambda](https://aws.amazon.com/pt/lambda/faqs/) pode ser visivelmente lenta. As invocações subsequentes não seguirão esta tendência. Este efeito é comum e até desejável, pois poupará recursos de uma máquina que está parada por inatividade. Se a mesma recebe requisições frequentes, ela responderá imediatamente, porém se está em estado de hibernação, apenas a primeira requisição servirá para que a máquina responda as próximas adequadamente.
